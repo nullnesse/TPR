@@ -1,0 +1,1027 @@
+{
+  "schema_version": 2,
+  "scope": "general_examples",
+  "note": "Синтетические учебные примеры для проверки разных сеток; не данные компании «Луч».",
+  "cases": {
+    "base": {
+      "schema_version": 2,
+      "scope": "general",
+      "level_semantics": "exact_count",
+      "model": {
+        "N": 10000,
+        "c": 0.5,
+        "reference_price": 0.0,
+        "price_known": false,
+        "suppliers": [
+          {
+            "id": "A",
+            "rates": [
+              0.01,
+              0.02,
+              0.03
+            ],
+            "probabilities": [
+              0.7,
+              0.2,
+              0.1
+            ],
+            "price_offset": 0.0
+          },
+          {
+            "id": "B",
+            "rates": [
+              0.01,
+              0.02,
+              0.03
+            ],
+            "probabilities": [
+              0.3,
+              0.4,
+              0.3
+            ],
+            "price_offset": -37.0
+          }
+        ]
+      },
+      "preferences": {
+        "lambda": 0.0,
+        "rho": 100.0
+      },
+      "assumptions": {
+        "coupling": "independent"
+      },
+      "state_count": 9,
+      "emv": {
+        "reference_supplier_id": "A",
+        "costs": {
+          "A": [
+            50.0,
+            100.0,
+            150.0
+          ],
+          "B": [
+            13.0,
+            63.0,
+            113.0
+          ]
+        },
+        "expected_costs": {
+          "A": 69.99999999999999,
+          "B": 62.999999999999986
+        },
+        "expected_costs_normalized": {
+          "A": 69.99999999999999,
+          "B": 62.999999999999986
+        },
+        "expected_repair": {
+          "A": 69.99999999999999,
+          "B": 99.99999999999999
+        },
+        "expected_defects": {
+          "A": 139.99999999999997,
+          "B": 199.99999999999997
+        },
+        "expected_rates": {
+          "A": 0.013999999999999999,
+          "B": 0.019999999999999997
+        },
+        "winners": [
+          "B"
+        ],
+        "choice": "B",
+        "saving_vs_reference": {
+          "A": 0.0,
+          "B": 7.0
+        },
+        "excess_over_best_mean": {
+          "A": 7.0,
+          "B": 0.0
+        }
+      },
+      "eol": {
+        "coupling": "independent",
+        "assumption": "качества партий независимы; это дополнительное допущение",
+        "state_count": 9,
+        "positive_state_count": 9,
+        "expected_minimum": 45.35,
+        "expected_regret": {
+          "A": 24.65,
+          "B": 17.65
+        },
+        "winners": [
+          "B"
+        ],
+        "choice": "B"
+      },
+      "risk": {
+        "means_normalized": {
+          "A": 70.0,
+          "B": 63.0
+        },
+        "variances": {
+          "A": 1100.0,
+          "B": 1500.0
+        },
+        "sds": {
+          "A": 33.166247903554,
+          "B": 38.72983346207417
+        },
+        "cv": {
+          "A": 0.4738035414793429,
+          "B": 0.6147592613027646
+        },
+        "diff": {
+          "first": "A",
+          "second": "B",
+          "distribution": {
+            "-137.0": 0.03,
+            "-87.0": 0.1,
+            "-37.0": 0.32000000000000006,
+            "13.0": 0.33999999999999997,
+            "63.0": 0.21
+          },
+          "p_first_cheaper": 0.5499999999999999,
+          "p_second_cheaper": 0.45000000000000007,
+          "p_tie": 0,
+          "expected_diff": -7.0000000000000036,
+          "diff_variance": 2600.0,
+          "diff_sd": 50.99019513592785
+        }
+      },
+      "mean_sd": {
+        "lambda": 0.0,
+        "means": {
+          "A": 70.0,
+          "B": 63.0
+        },
+        "sds": {
+          "A": 33.166247903554,
+          "B": 38.72983346207417
+        },
+        "scores": {
+          "A": 70.0,
+          "B": 63.0
+        },
+        "winners": [
+          "B"
+        ],
+        "choice": "B"
+      },
+      "utility": {
+        "rho": 100.0,
+        "A": {
+          "ce": 76.35731004430394,
+          "risk_premium": 6.357310044303944
+        },
+        "B": {
+          "ce": 70.37852435545759,
+          "risk_premium": 7.378524355457586
+        },
+        "winners": [
+          "B"
+        ],
+        "choice": "B"
+      },
+      "sensitivity": {
+        "pair": {
+          "a": "A",
+          "b": "B",
+          "mu_a": 0.013999999999999999,
+          "mu_b": 0.019999999999999997,
+          "h_ab": 0.005999999999999998,
+          "delta_ab": 37.0
+        },
+        "thresholds": {
+          "discount": {
+            "kind": "single",
+            "root": 29.999999999999993,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "repair_cost": {
+            "kind": "single",
+            "root": 0.6166666666666668,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "mean_rate_b": {
+            "kind": "single",
+            "root": 0.0214,
+            "feasible": true,
+            "region": {
+              "lower": 0.01,
+              "upper": 0.03,
+              "integer": false
+            }
+          },
+          "batch_size": {
+            "kind": "single",
+            "root": 12333.333333333336,
+            "feasible": false,
+            "region": {
+              "lower": 1.0,
+              "upper": null,
+              "integer": true
+            }
+          }
+        }
+      },
+      "simulation": {
+        "runs": 100000,
+        "seed": 42,
+        "means": {
+          "A": 69.9745,
+          "B": 63.1185
+        },
+        "p_best": {
+          "A": 0.55112,
+          "B": 0.44888
+        }
+      }
+    },
+    "unequal_2x3": {
+      "schema_version": 2,
+      "scope": "general",
+      "level_semantics": "exact_count",
+      "model": {
+        "N": 10000,
+        "c": 0.5,
+        "reference_price": 0.0,
+        "price_known": false,
+        "suppliers": [
+          {
+            "id": "A",
+            "rates": [
+              0.01,
+              0.03
+            ],
+            "probabilities": [
+              0.75,
+              0.25
+            ],
+            "price_offset": 0.0
+          },
+          {
+            "id": "B",
+            "rates": [
+              0.02,
+              0.03,
+              0.11
+            ],
+            "probabilities": [
+              0.5,
+              0.25,
+              0.25
+            ],
+            "price_offset": -37.0
+          }
+        ]
+      },
+      "preferences": {
+        "lambda": 0.0,
+        "rho": 100.0
+      },
+      "assumptions": {
+        "coupling": "independent"
+      },
+      "state_count": 6,
+      "emv": {
+        "reference_supplier_id": "A",
+        "costs": {
+          "A": [
+            50.0,
+            150.0
+          ],
+          "B": [
+            63.0,
+            113.0,
+            513.0
+          ]
+        },
+        "expected_costs": {
+          "A": 75.0,
+          "B": 188.0
+        },
+        "expected_costs_normalized": {
+          "A": 75.0,
+          "B": 188.0
+        },
+        "expected_repair": {
+          "A": 75.0,
+          "B": 225.0
+        },
+        "expected_defects": {
+          "A": 150.0,
+          "B": 450.0
+        },
+        "expected_rates": {
+          "A": 0.015,
+          "B": 0.045
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A",
+        "saving_vs_reference": {
+          "A": 0.0,
+          "B": -113.0
+        },
+        "excess_over_best_mean": {
+          "A": 0.0,
+          "B": 113.0
+        }
+      },
+      "eol": {
+        "coupling": "independent",
+        "assumption": "качества партий независимы; это дополнительное допущение",
+        "state_count": 6,
+        "positive_state_count": 6,
+        "expected_minimum": 61.8125,
+        "expected_regret": {
+          "A": 13.1875,
+          "B": 126.1875
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A"
+      },
+      "risk": {
+        "means_normalized": {
+          "A": 75.0,
+          "B": 188.0
+        },
+        "variances": {
+          "A": 1875.0,
+          "B": 35625.0
+        },
+        "sds": {
+          "A": 43.30127018922193,
+          "B": 188.74586088176875
+        },
+        "cv": {
+          "A": 0.5773502691896257,
+          "B": 1.003967345115791
+        },
+        "diff": {
+          "first": "A",
+          "second": "B",
+          "distribution": {
+            "-87.0": 0.125,
+            "-37.0": 0.0625,
+            "13.0": 0.375,
+            "63.0": 0.1875,
+            "363.0": 0.0625,
+            "463.0": 0.1875
+          },
+          "p_first_cheaper": 0.8125,
+          "p_second_cheaper": 0.1875,
+          "p_tie": 0,
+          "expected_diff": 113.0,
+          "diff_variance": 37500.0,
+          "diff_sd": 193.64916731037084
+        }
+      },
+      "mean_sd": {
+        "lambda": 0.0,
+        "means": {
+          "A": 75.0,
+          "B": 188.0
+        },
+        "sds": {
+          "A": 43.30127018922193,
+          "B": 188.74586088176875
+        },
+        "scores": {
+          "A": 75.0,
+          "B": 188.0
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A"
+      },
+      "utility": {
+        "rho": 100.0,
+        "A": {
+          "ce": 85.73740195087886,
+          "risk_premium": 10.737401950878862
+        },
+        "B": {
+          "ce": 378.3439328097533,
+          "risk_premium": 190.3439328097533
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A"
+      },
+      "sensitivity": {
+        "pair": {
+          "a": "A",
+          "b": "B",
+          "mu_a": 0.015,
+          "mu_b": 0.045,
+          "h_ab": 0.03,
+          "delta_ab": 37.0
+        },
+        "thresholds": {
+          "discount": {
+            "kind": "single",
+            "root": 150.0,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "repair_cost": {
+            "kind": "single",
+            "root": 0.12333333333333334,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "mean_rate_b": {
+            "kind": "single",
+            "root": 0.0224,
+            "feasible": true,
+            "region": {
+              "lower": 0.02,
+              "upper": 0.11,
+              "integer": false
+            }
+          },
+          "batch_size": {
+            "kind": "single",
+            "root": 2466.666666666667,
+            "feasible": false,
+            "region": {
+              "lower": 1.0,
+              "upper": null,
+              "integer": true
+            }
+          }
+        }
+      },
+      "simulation": {
+        "runs": 100000,
+        "seed": 42,
+        "means": {
+          "A": 75.083,
+          "B": 188.943
+        },
+        "p_best": {
+          "A": 0.81145,
+          "B": 0.18855
+        }
+      }
+    },
+    "three_2x3x1": {
+      "schema_version": 2,
+      "scope": "general",
+      "level_semantics": "exact_count",
+      "model": {
+        "N": 10000,
+        "c": 0.5,
+        "reference_price": 0.0,
+        "price_known": false,
+        "suppliers": [
+          {
+            "id": "A",
+            "rates": [
+              0.01,
+              0.03
+            ],
+            "probabilities": [
+              0.75,
+              0.25
+            ],
+            "price_offset": 0.0
+          },
+          {
+            "id": "B",
+            "rates": [
+              0.02,
+              0.03,
+              0.11
+            ],
+            "probabilities": [
+              0.5,
+              0.25,
+              0.25
+            ],
+            "price_offset": -37.0
+          },
+          {
+            "id": "C",
+            "rates": [
+              0.01
+            ],
+            "probabilities": [
+              1.0
+            ],
+            "price_offset": 10.0
+          }
+        ]
+      },
+      "preferences": {
+        "lambda": 0.0,
+        "rho": 100.0
+      },
+      "assumptions": {
+        "coupling": "independent"
+      },
+      "state_count": 6,
+      "emv": {
+        "reference_supplier_id": "A",
+        "costs": {
+          "A": [
+            50.0,
+            150.0
+          ],
+          "B": [
+            63.0,
+            113.0,
+            513.0
+          ],
+          "C": [
+            60.0
+          ]
+        },
+        "expected_costs": {
+          "A": 75.0,
+          "B": 188.0,
+          "C": 60.0
+        },
+        "expected_costs_normalized": {
+          "A": 75.0,
+          "B": 188.0,
+          "C": 60.0
+        },
+        "expected_repair": {
+          "A": 75.0,
+          "B": 225.0,
+          "C": 50.0
+        },
+        "expected_defects": {
+          "A": 150.0,
+          "B": 450.0,
+          "C": 100.0
+        },
+        "expected_rates": {
+          "A": 0.015,
+          "B": 0.045,
+          "C": 0.01
+        },
+        "winners": [
+          "C"
+        ],
+        "choice": "C",
+        "saving_vs_reference": {
+          "A": 0.0,
+          "B": -113.0,
+          "C": 15.0
+        },
+        "excess_over_best_mean": {
+          "A": 15.0,
+          "B": 128.0,
+          "C": 0.0
+        }
+      },
+      "eol": {
+        "coupling": "independent",
+        "assumption": "качества партий независимы; это дополнительное допущение",
+        "state_count": 6,
+        "positive_state_count": 6,
+        "expected_minimum": 52.5,
+        "expected_regret": {
+          "A": 22.5,
+          "B": 135.5,
+          "C": 7.5
+        },
+        "winners": [
+          "C"
+        ],
+        "choice": "C"
+      },
+      "risk": {
+        "means_normalized": {
+          "A": 75.0,
+          "B": 188.0,
+          "C": 60.0
+        },
+        "variances": {
+          "A": 1875.0,
+          "B": 35625.0,
+          "C": 0.0
+        },
+        "sds": {
+          "A": 43.30127018922193,
+          "B": 188.74586088176875,
+          "C": 0.0
+        },
+        "cv": {
+          "A": 0.5773502691896257,
+          "B": 1.003967345115791,
+          "C": 0.0
+        },
+        "diff": {
+          "first": "A",
+          "second": "B",
+          "distribution": {
+            "-87.0": 0.125,
+            "-37.0": 0.0625,
+            "13.0": 0.375,
+            "63.0": 0.1875,
+            "363.0": 0.0625,
+            "463.0": 0.1875
+          },
+          "p_first_cheaper": 0.8125,
+          "p_second_cheaper": 0.1875,
+          "p_tie": 0,
+          "expected_diff": 113.0,
+          "diff_variance": 37500.0,
+          "diff_sd": 193.64916731037084
+        }
+      },
+      "mean_sd": {
+        "lambda": 0.0,
+        "means": {
+          "A": 75.0,
+          "B": 188.0,
+          "C": 60.0
+        },
+        "sds": {
+          "A": 43.30127018922193,
+          "B": 188.74586088176875,
+          "C": 0.0
+        },
+        "scores": {
+          "A": 75.0,
+          "B": 188.0,
+          "C": 60.0
+        },
+        "winners": [
+          "C"
+        ],
+        "choice": "C"
+      },
+      "utility": {
+        "rho": 100.0,
+        "A": {
+          "ce": 85.73740195087886,
+          "risk_premium": 10.737401950878862
+        },
+        "B": {
+          "ce": 378.3439328097533,
+          "risk_premium": 190.3439328097533
+        },
+        "C": {
+          "ce": 60.0,
+          "risk_premium": 0.0
+        },
+        "winners": [
+          "C"
+        ],
+        "choice": "C"
+      },
+      "sensitivity": {
+        "pair": {
+          "a": "A",
+          "b": "B",
+          "mu_a": 0.015,
+          "mu_b": 0.045,
+          "h_ab": 0.03,
+          "delta_ab": 37.0
+        },
+        "thresholds": {
+          "discount": {
+            "kind": "single",
+            "root": 150.0,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "repair_cost": {
+            "kind": "single",
+            "root": 0.12333333333333334,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "mean_rate_b": {
+            "kind": "single",
+            "root": 0.0224,
+            "feasible": true,
+            "region": {
+              "lower": 0.02,
+              "upper": 0.11,
+              "integer": false
+            }
+          },
+          "batch_size": {
+            "kind": "single",
+            "root": 2466.666666666667,
+            "feasible": false,
+            "region": {
+              "lower": 1.0,
+              "upper": null,
+              "integer": true
+            }
+          }
+        }
+      },
+      "simulation": {
+        "runs": 100000,
+        "seed": 42,
+        "means": {
+          "A": 75.122,
+          "B": 188.2175,
+          "C": 60.0
+        },
+        "p_best": {
+          "A": 0.74878,
+          "B": 0.0,
+          "C": 0.25122
+        }
+      }
+    },
+    "teacher_grids": {
+      "schema_version": 2,
+      "scope": "general",
+      "level_semantics": "exact_count",
+      "model": {
+        "N": 10000,
+        "c": 0.5,
+        "reference_price": 0.0,
+        "price_known": false,
+        "suppliers": [
+          {
+            "id": "A",
+            "rates": [
+              0.01,
+              0.02,
+              0.03,
+              0.05,
+              0.07
+            ],
+            "probabilities": [
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ],
+            "price_offset": 0.0
+          },
+          {
+            "id": "B",
+            "rates": [
+              0.02,
+              0.03,
+              0.11
+            ],
+            "probabilities": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "price_offset": -37.0
+          }
+        ]
+      },
+      "preferences": {
+        "lambda": 0.0,
+        "rho": 100.0
+      },
+      "assumptions": {
+        "coupling": "independent"
+      },
+      "state_count": 15,
+      "emv": {
+        "reference_supplier_id": "A",
+        "costs": {
+          "A": [
+            50.0,
+            100.0,
+            150.0,
+            250.0,
+            350.00000000000006
+          ],
+          "B": [
+            63.0,
+            113.0,
+            513.0
+          ]
+        },
+        "expected_costs": {
+          "A": 180.00000000000003,
+          "B": 229.66666666666663
+        },
+        "expected_costs_normalized": {
+          "A": 180.00000000000003,
+          "B": 229.66666666666663
+        },
+        "expected_repair": {
+          "A": 180.00000000000003,
+          "B": 266.66666666666663
+        },
+        "expected_defects": {
+          "A": 360.00000000000006,
+          "B": 533.3333333333333
+        },
+        "expected_rates": {
+          "A": 0.036000000000000004,
+          "B": 0.05333333333333333
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A",
+        "saving_vs_reference": {
+          "A": 0.0,
+          "B": -49.6666666666666
+        },
+        "excess_over_best_mean": {
+          "A": 0.0,
+          "B": 49.6666666666666
+        }
+      },
+      "eol": {
+        "coupling": "independent",
+        "assumption": "качества партий независимы; это дополнительное допущение",
+        "state_count": 15,
+        "positive_state_count": 15,
+        "expected_minimum": 112.73333333333335,
+        "expected_regret": {
+          "A": 67.26666666666668,
+          "B": 116.93333333333334
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A"
+      },
+      "risk": {
+        "means_normalized": {
+          "A": 180.0,
+          "B": 229.66666666666666
+        },
+        "variances": {
+          "A": 11600.000000000004,
+          "B": 40555.555555555555
+        },
+        "sds": {
+          "A": 107.70329614269009,
+          "B": 201.38409955990954
+        },
+        "cv": {
+          "A": 0.5983516452371672,
+          "B": 0.8768538442376324
+        },
+        "diff": {
+          "first": "A",
+          "second": "B",
+          "distribution": {
+            "-287.0": 0.06666666666666667,
+            "-237.0": 0.06666666666666667,
+            "-187.0": 0.06666666666666667,
+            "-137.0": 0.06666666666666667,
+            "-87.0": 0.06666666666666667,
+            "-37.0": 0.13333333333333333,
+            "13.0": 0.13333333333333333,
+            "63.0": 0.06666666666666667,
+            "163.0": 0.06666666666666667,
+            "263.0": 0.06666666666666667,
+            "363.0": 0.06666666666666667,
+            "413.0": 0.06666666666666667,
+            "463.0": 0.06666666666666667
+          },
+          "p_first_cheaper": 0.5333333333333333,
+          "p_second_cheaper": 0.4666666666666666,
+          "p_tie": 0,
+          "expected_diff": 49.66666666666666,
+          "diff_variance": 52155.55555555556,
+          "diff_sd": 228.3759084394752
+        }
+      },
+      "mean_sd": {
+        "lambda": 0.0,
+        "means": {
+          "A": 180.0,
+          "B": 229.66666666666666
+        },
+        "sds": {
+          "A": 107.70329614269009,
+          "B": 201.38409955990954
+        },
+        "scores": {
+          "A": 180.0,
+          "B": 229.66666666666666
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A"
+      },
+      "utility": {
+        "rho": 100.0,
+        "A": {
+          "ce": 238.22579739312067,
+          "risk_premium": 58.22579739312067
+        },
+        "B": {
+          "ce": 406.03877511131867,
+          "risk_premium": 176.372108444652
+        },
+        "winners": [
+          "A"
+        ],
+        "choice": "A"
+      },
+      "sensitivity": {
+        "pair": {
+          "a": "A",
+          "b": "B",
+          "mu_a": 0.036000000000000004,
+          "mu_b": 0.05333333333333333,
+          "h_ab": 0.017333333333333326,
+          "delta_ab": 37.0
+        },
+        "thresholds": {
+          "discount": {
+            "kind": "single",
+            "root": 86.66666666666663,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "repair_cost": {
+            "kind": "single",
+            "root": 0.21346153846153856,
+            "feasible": true,
+            "region": {
+              "lower": 0.0,
+              "upper": null,
+              "integer": false
+            }
+          },
+          "mean_rate_b": {
+            "kind": "single",
+            "root": 0.04340000000000001,
+            "feasible": true,
+            "region": {
+              "lower": 0.02,
+              "upper": 0.11,
+              "integer": false
+            }
+          },
+          "batch_size": {
+            "kind": "single",
+            "root": 4269.230769230771,
+            "feasible": false,
+            "region": {
+              "lower": 1.0,
+              "upper": null,
+              "integer": true
+            }
+          }
+        }
+      },
+      "simulation": {
+        "runs": 100000,
+        "seed": 42,
+        "means": {
+          "A": 179.8895,
+          "B": 230.299
+        },
+        "p_best": {
+          "A": 0.53441,
+          "B": 0.46559
+        }
+      }
+    }
+  }
+}
